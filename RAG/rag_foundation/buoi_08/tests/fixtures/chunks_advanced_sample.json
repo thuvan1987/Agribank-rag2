@@ -1,0 +1,90 @@
+[
+  {
+    "chunk_id": "adv-chunk-01",
+    "strategy": "hierarchical",
+    "source": "Quy_dinh_Linh_vuc_Tien_te_Phap_ly.pdf",
+    "page_start": 5,
+    "page_end": 5,
+    "text": "Điều 5. Khoản 1. Thư tín dụng chứng từ (Letter of Credit - L/C) là một cam kết bằng văn bản của ngân hàng phát hành đối với bên thụ hưởng về việc thanh toán tiền khi xuất trình bộ chứng từ phù hợp.",
+    "metadata_structure": {
+      "heading": "Điều 5. Khái niệm và bản chất của Thư tín dụng chứng từ"
+    }
+  },
+  {
+    "chunk_id": "adv-chunk-02",
+    "strategy": "hierarchical",
+    "source": "Quy_dinh_Linh_vuc_Tien_te_Phap_ly.pdf",
+    "page_start": 5,
+    "page_end": 6,
+    "text": "Điều 5. Khoản 2. Cam kết thanh toán không hủy ngang của ngân hàng mở L/C phát sinh hiệu lực ngay khi người thụ hưởng xuất trình chứng từ hợp lệ theo đúng các điều khoản và điều kiện được ghi trong thư tín dụng.",
+    "metadata_structure": {
+      "heading": "Điều 5. Nghĩa vụ thanh toán không hủy ngang"
+    }
+  },
+  {
+    "chunk_id": "adv-chunk-03",
+    "strategy": "hierarchical",
+    "source": "Quy_dinh_Linh_vuc_Tien_te_Phap_ly.pdf",
+    "page_start": 6,
+    "page_end": 6,
+    "text": "Điều 6. Khoản 1. Trách nhiệm trả tiền bắt buộc và cố định của bên phát hành thư tín dụng được thiết lập ngay sau khi nhận đủ các giấy tờ thương mại đúng chuẩn theo thỏa thuận ban đầu giữa các bên.",
+    "metadata_structure": {
+      "heading": "Điều 6. Trách nhiệm của bên phát hành"
+    }
+  },
+  {
+    "chunk_id": "adv-chunk-04",
+    "strategy": "hierarchical",
+    "source": "Quy_dinh_Linh_vuc_Tien_te_Phap_ly.pdf",
+    "page_start": 12,
+    "page_end": 12,
+    "text": "Điều 12. Khoản 3. Trong giao dịch thương mại quốc tế áp dụng điều kiện CIF Incoterms 2020, các trường hợp bất khả kháng là căn cứ để xét miễn trách nhiệm đối với việc giao hàng chậm trễ hoặc bất thành.",
+    "metadata_structure": {
+      "heading": "Điều 12. Điều khoản bất khả kháng và miễn trách nhiệm CIF"
+    }
+  },
+  {
+    "chunk_id": "adv-chunk-05",
+    "strategy": "hierarchical",
+    "source": "Quy_dinh_Linh_vuc_Tien_te_Phap_ly.pdf",
+    "page_start": 15,
+    "page_end": 15,
+    "text": "Điều 15. Khoản 4. Thời hạn kiểm tra chứng từ của ngân hàng được chỉ định là tối đa 05 ngày làm việc ngân hàng tiếp theo ngày nhận được bộ chứng từ trình tới.",
+    "metadata_structure": {
+      "heading": "Điều 15. Quy trình và thời hạn kiểm tra chứng từ"
+    }
+  },
+  {
+    "chunk_id": "adv-chunk-06",
+    "strategy": "hierarchical",
+    "source": "Quy_dinh_Linh_vuc_Tien_te_Phap_ly.pdf",
+    "page_start": 18,
+    "page_end": 18,
+    "text": "Điều 18. Khoản 2. Vận đơn đường biển (Bill of Lading - B/L) trình lên ngân hàng phải là vận đơn hoàn hảo, ghi rõ hàng đã được xếp lên tàu và không chấp nhận ghi chú xấu về tình trạng hàng hóa.",
+    "metadata_structure": {
+      "heading": "Điều 18. Yêu cầu đối với vận đơn đường biển"
+    }
+  },
+  {
+    "chunk_id": "adv-chunk-07",
+    "strategy": "hierarchical",
+    "source": "Quy_dinh_Linh_vuc_Tien_te_Phap_ly.pdf",
+    "page_start": 22,
+    "page_end": 22,
+    "text": "Điều 22. Khoản 1. Đối với điều kiện CIP Incoterms 2020, bên bán có nghĩa vụ mua bảo hiểm hàng hóa với phạm vi bảo hiểm tối đa theo Điều khoản bảo hiểm hàng hóa (A) hoặc tương đương.",
+    "metadata_structure": {
+      "heading": "Điều 22. Nghĩa vụ bảo hiểm theo điều kiện CIP"
+    }
+  },
+  {
+    "chunk_id": "adv-chunk-08",
+    "strategy": "hierarchical",
+    "source": "Huong_Dan_Ngoai_Pham_Vi.pdf",
+    "page_start": 1,
+    "page_end": 1,
+    "text": "Điều 99. Khoản 9. Quy trình tạo tài khoản cá nhân trên ứng dụng mạng xã hội và cài đặt các trò chơi điện tử trực tuyến cho mục đích giải trí gia đình.",
+    "metadata_structure": {
+      "heading": "Điều 99. Hướng dẫn giải trí và mạng xã hội ngoài phạm vi"
+    }
+  }
+]

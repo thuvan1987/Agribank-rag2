@@ -1,0 +1,58 @@
+[
+  {
+    "query_id": "Q01",
+    "question": "Thư tín dụng chứng từ L/C là gì theo quy định tại Điều 5 Khoản 1?",
+    "relevant_chunk_ids": ["adv-chunk-01"],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q02",
+    "question": "Ngân hàng mở L/C có trách nhiệm thanh toán không hủy ngang khi xuất trình chứng từ như thế nào?",
+    "relevant_chunk_ids": ["adv-chunk-02", "adv-chunk-03"],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q03",
+    "question": "Trách nhiệm trả tiền bắt buộc của bên phát hành thư tín dụng được thiết lập dựa trên giấy tờ thương mại gì?",
+    "relevant_chunk_ids": ["adv-chunk-03", "adv-chunk-02"],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q04",
+    "question": "Điều kiện bất khả kháng và miễn trách nhiệm trong giao dịch CIF Incoterms 2020 được quy định tại đâu?",
+    "relevant_chunk_ids": ["adv-chunk-04"],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q05",
+    "question": "Thời hạn tối đa để ngân hàng được chỉ định kiểm tra chứng từ L/C là bao nhiêu ngày làm việc?",
+    "relevant_chunk_ids": ["adv-chunk-05"],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q06",
+    "question": "Yêu cầu đối với vận đơn đường biển Bill of Lading trình lên ngân hàng có phải là vận đơn hoàn hảo không?",
+    "relevant_chunk_ids": ["adv-chunk-06"],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q07",
+    "question": "Phạm vi bảo hiểm tối thiểu bên bán phải mua theo điều kiện CIP Incoterms 2020 là gì?",
+    "relevant_chunk_ids": ["adv-chunk-07"],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q08",
+    "question": "Cách tạo tài khoản mạng xã hội và cài đặt ứng dụng trò chơi giải trí gia đình?",
+    "relevant_chunk_ids": ["adv-chunk-08"],
+    "scope": "out_of_scope",
+    "needs_human_review": true
+  }
+]
