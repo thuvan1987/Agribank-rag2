@@ -1,0 +1,11 @@
+{
+  "document_id": "Incoterms 2020 - ban tieng Viet.pdf",
+  "page": 75,
+  "text": "# CIF | Cost Insurance and Freight\n\nCIF (tên địa điểm giao hàng) Incoterms<sup>®</sup> 2020\n\nSơ đồ phân chia chi phí, rủi ro và bảo hiểm cho điều kiện CIF\n\n## HƯỚNG DẪN SỬ DỤNG\n\n1.  **Về phương thức vận tải:** Điều kiện này sẽ được sử dụng cho vận tải biển và thủy nội địa. CIF sẽ không phù hợp khi hàng hóa được giao cho người chuyên chở trước khi hàng được giao lên tàu, ví dụ hàng đóng trong container, mà thường là giao tại bến bãi ở cảng. Trong trường hợp như thế nên sử dụng điều kiện CPT.\n\n2.  **Chuyển giao hàng hóa và rủi ro (CIF - Cost Insurance and Freight):** Tiền hàng, phí bảo hiểm và cước phí có nghĩa là người bán phải giao hàng lên tàu hoặc mua hàng để giao hàng như vậy. Rủi ro về mất mát hay hư hỏng hàng hóa chuyển giao khi hàng được giao lên tàu. Người bán phải ký hợp đồng và trả các chi phí và cước phí cần thiết để đưa hàng hóa đến cảng đến quy định.\n\nSơ đồ điểm giao hàng và phân chia rủi ro cho điều kiện CIF\n\nNgười bán có nghĩa vụ ký kết hợp đồng bảo hiểm để bảo hiểm những rủi ro của người mua nếu mất mát hư hỏng hàng hóa.\n\nĐiều kiện này có hai cảng quan trọng: cảng đi nơi hàng hóa được giao lên trên tàu chuyên chở và cảng đích. Rủi ro chuyển từ người bán sang người mua khi người bán giao hàng cho người mua bằng việc đặt chúng lên trên tàu chuyên chở tại cảng đi hoặc mua hàng để giao như vậy. Tuy nhiên, người bán sẽ còn chịu trách nhiệm ký kết hợp đồng vận tải để đưa hàng hóa từ cảng đi đến cảng đích.\n\nĐiều kiện này có hai điểm tới hạn, vì rủi ro di chuyển và chi phí được phân chia ở hai nơi khác nhau. Trong khi hợp đồng luôn ghi rõ cảng đến thì nó lại có thể không chỉ rõ cảng xếp hàng - là nơi mà rủi ro di chuyển sang người mua. Nếu cảng gửi hàng có ý nghĩa đặc biệt với người mua, thì các bên nên quy định trong hợp đồng càng cụ thể càng tốt.\n\n220\n",
+  "metadata": {
+    "source": "/Users/thuvan/Agribank/DaoTaoTapHuan/Ứng dụng AI phân tích dữ liệu nâng cao/Agribank-rag2/RAG/rag_foundation/buoi_05/datademo/Incoterms 2020 - ban tieng Viet.pdf",
+    "page": 75,
+    "ocr_used": "llamaparse_image",
+    "language": "vi"
+  }
+}

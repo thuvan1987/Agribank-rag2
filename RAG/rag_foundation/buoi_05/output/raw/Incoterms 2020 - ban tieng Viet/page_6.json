@@ -1,0 +1,11 @@
+{
+  "document_id": "Incoterms 2020 - ban tieng Viet.pdf",
+  "page": 6,
+  "text": "A1/B1 Nghĩa vụ chung\n\nA2/B2 Giao/nhận hàng\n\nA3/B3 Chuyển giao rủi ro\n\nA4/B4 Vận tải\n\nA5/B5 Bảo hiểm\n\nA6/B6 Chứng từ giao nhận hàng hóa\n\nA7/B7 Thủ tục xuất khẩu/nhập khẩu\n\nA8/B8 Kiểm tra/đóng gói/ký mã hiệu\n\nA9/B9 Phân chia chi phí\n\nA10/B10 Nghĩa vụ về việc thông báo cho bên còn lại\n\nTrong quyển sách này, nghĩa vụ A/B của 2 bên được đặt song song ở 2 trang liền nhau để người sử dụng có thể dễ dàng tìm và so sánh nghĩa vụ của các bên ở từng mục cụ thể.\n\n## 6. Một số điểm khác biệt chính giữa Incoterms® 2020 so với bản 2010\n\n* Lý giải rõ hơn về Incoterms® ở phần giới thiệu.\n\n* Sắp xếp lại các mục nghĩa vụ của các bên để làm rõ hơn nội dung của nghĩa vụ giao hàng và phân chia rủi ro.\n\n* Vận đơn On - board khi giao hàng với điều kiện FCA.\n\n* Nghĩa vụ về phân chia chi phí được dời xuống mục A9/B9.\n\n* Mức bảo hiểm của CIF và CIP.\n\n* Thay thế điều kiện DAT bằng DPU.\n\n151\n",
+  "metadata": {
+    "source": "/Users/thuvan/Agribank/DaoTaoTapHuan/Ứng dụng AI phân tích dữ liệu nâng cao/Agribank-rag2/RAG/rag_foundation/buoi_05/datademo/Incoterms 2020 - ban tieng Viet.pdf",
+    "page": 6,
+    "ocr_used": "llamaparse_image",
+    "language": "vi"
+  }
+}

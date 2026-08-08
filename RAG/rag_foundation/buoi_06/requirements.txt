@@ -1,0 +1,7 @@
+# Requirements for RAG Workshop Buổi 06
+# langchain
+# langchain-community
+# chromadb
+# openai
+# python-dotenv
+# streamlit

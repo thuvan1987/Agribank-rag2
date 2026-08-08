@@ -1,0 +1,42 @@
+[
+  {
+    "chunk_id": "hier-sample-01",
+    "strategy": "hierarchical",
+    "source": "sample_document.pdf",
+    "page_start": 1,
+    "page_end": 1,
+    "text": "Nội dung phân cấp mục 1: Điều khoản chung về hợp đồng thương mại quốc tế."
+  },
+  {
+    "chunk_id": "hier-sample-02",
+    "strategy": "hierarchical",
+    "source": "sample_document.pdf",
+    "page_start": 2,
+    "page_end": 4,
+    "text": "Nội dung phân cấp mục 2: Quy định về giao hàng và trách nhiệm các bên theo điều kiện CIF."
+  },
+  {
+    "chunk_id": "hier-sample-03",
+    "strategy": "hierarchical",
+    "source": "sample_document.pdf",
+    "page_start": 5,
+    "page_end": 5,
+    "text": "Nội dung phân cấp mục 3: Thủ tục thanh toán và giải quyết tranh chấp."
+  },
+  {
+    "chunk_id": "semantic-sample-01",
+    "strategy": "semantic",
+    "source": "sample_document.pdf",
+    "page_start": 6,
+    "page_end": 6,
+    "text": "Nội dung phân đoạn ngữ nghĩa về phương thức tín dụng chứng thư L/C."
+  },
+  {
+    "chunk_id": "fixed-sample-01",
+    "strategy": "fixed",
+    "source": "sample_document.pdf",
+    "page_start": 7,
+    "page_end": 8,
+    "text": "Nội dung phân đoạn kích thước cố định mô phỏng dữ liệu văn bản mẫu."
+  }
+]
