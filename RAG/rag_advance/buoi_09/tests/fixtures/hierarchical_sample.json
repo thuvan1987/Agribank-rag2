@@ -1,0 +1,24 @@
+[
+  {
+    "chunk_id": "hier-sample-01",
+    "strategy": "hierarchical",
+    "source": "LuatNganHangSample.pdf",
+    "page_start": 1,
+    "page_end": 2,
+    "text": "Chương I: QUY ĐỊNH CHUNG\nĐiều 1. Phạm vi điều chỉnh\nLuật này quy định về hoạt động ngân hàng và các dịch vụ tài chính.",
+    "metadata_structure": {
+      "heading": "Chương I: QUY ĐỊNH CHUNG"
+    }
+  },
+  {
+    "chunk_id": "hier-sample-02",
+    "strategy": "hierarchical",
+    "source": "LuatNganHangSample.pdf",
+    "page_start": 3,
+    "page_end": 5,
+    "text": "Điều 2. Giải thích từ ngữ\n1. Thư tín dụng (L/C) là cam kết thanh toán không hủy ngang.",
+    "metadata_structure": {
+      "heading": "Điều 2. Giải thích từ ngữ"
+    }
+  }
+]

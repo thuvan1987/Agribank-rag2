@@ -1,0 +1,66 @@
+[
+  {
+    "question_id": "Q01",
+    "question": "Điều kiện giao hàng CIP Incoterms 2020 quy định về nghĩa vụ bảo hiểm và rủi ro chuyển giao như thế nào?",
+    "question_type": "exact",
+    "relevant_child_ids": [
+      "hier-5"
+    ],
+    "relevant_parent_ids": [
+      "parent_b27f8359ccff"
+    ],
+    "needs_human_review": true,
+    "notes": "Exact match query for CIP Incoterms 2020"
+  },
+  {
+    "question_id": "Q02",
+    "question": "Mục tiêu và phạm vi áp dụng đối với quy chuẩn kỹ thuật và thương mại dịch vụ được quy định ra sao?",
+    "question_type": "multi_aspect",
+    "relevant_child_ids": [
+      "hier-16",
+      "hier-17"
+    ],
+    "relevant_parent_ids": [
+      "parent_32aa6aaf8fa0",
+      "parent_beeb183b1583"
+    ],
+    "needs_human_review": true,
+    "notes": "Multi-aspect query for trade objectives and service scope"
+  },
+  {
+    "question_id": "Q03",
+    "question": "Khách hàng cần đáp ứng những yêu cầu gì về nghĩa vụ bảo hiểm tối đa theo điều kiện CIF?",
+    "question_type": "paraphrase",
+    "relevant_child_ids": [
+      "hier-13",
+      "hier-14"
+    ],
+    "relevant_parent_ids": [
+      "parent_66b11f912fcf"
+    ],
+    "needs_human_review": true,
+    "notes": "Paraphrase query for CIF insurance obligations"
+  },
+  {
+    "question_id": "Q04",
+    "question": "Quy định về việc phân chia chi phí và rủi ro tại cảng đi và cảng đến cho điều kiện FOB gồm những trách nhiệm nào?",
+    "question_type": "hierarchy_context",
+    "relevant_child_ids": [
+      "hier-9"
+    ],
+    "relevant_parent_ids": [
+      "parent_36981b4348e3"
+    ],
+    "needs_human_review": true,
+    "notes": "Hierarchy context query for FOB port responsibility"
+  },
+  {
+    "question_id": "Q05",
+    "question": "Lãi suất tiết kiệm cao nhất trên thị trường ngân hàng hôm nay là bao nhiêu?",
+    "question_type": "out_of_scope",
+    "relevant_child_ids": [],
+    "relevant_parent_ids": [],
+    "needs_human_review": true,
+    "notes": "Out of scope query not present in corpus"
+  }
+]

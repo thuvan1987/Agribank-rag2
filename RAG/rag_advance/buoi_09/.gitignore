@@ -1,0 +1,14 @@
+.env
+*.env
+!.env.example
+
+# Local storage and caches
+storage/chroma/
+storage/hierarchy/
+storage/huggingface/
+reports/*.json
+!reports/.gitkeep
+
+__pycache__/
+*.py[cod]
+.DS_Store
