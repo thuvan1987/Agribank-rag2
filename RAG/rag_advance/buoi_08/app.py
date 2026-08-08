@@ -218,7 +218,7 @@ with tab1:
             > **Hướng dẫn khắc phục:**
             > Chạy lệnh CLI sau trong terminal để tải model Reranker về local cache:
             > ```bash
-            > python rag_foundation/buoi_08/advanced_rag.py rerank --question "Test"
+            > python rag_advance/buoi_08/advanced_rag.py rerank --question "Test"
             > ```
             """)
 
@@ -445,6 +445,6 @@ with tab4:
         st.markdown("""
         Để tạo báo cáo đánh giá định lượng offline, hãy chạy lệnh CLI sau:
         ```bash
-        python rag_foundation/buoi_08/evaluate.py --strategy hierarchical --k 5
+        python rag_advance/buoi_08/evaluate.py --strategy hierarchical --k 5
         ```
         """)

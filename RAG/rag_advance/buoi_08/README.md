@@ -38,7 +38,7 @@ flowchart TD
 ## 📂 3. Cấu Trúc Dự Án (Project Structure)
 
 ```text
-rag_foundation/buoi_08/
+rag_advance/buoi_08/
 ├── SPEC_buoi_08.md
 ├── README.md
 ├── requirements.txt
@@ -77,11 +77,11 @@ source rag_foundation/buoi_05/.venv/bin/activate
 
 ### B. Cài đặt Dependencies
 ```bash
-pip install -r rag_foundation/buoi_08/requirements.txt
+pip install -r rag_advance/buoi_08/requirements.txt
 ```
 
 ### C. Cấu hình File `.env`
-Sao chép `.env.example` thành `.env` tại `rag_foundation/buoi_08/.env`:
+Sao chép `.env.example` thành `.env` tại `rag_advance/buoi_08/.env`:
 ```ini
 GEMINI_API_KEY=AIzaSy...
 GEMINI_EMBEDDING_MODEL=gemini-embedding-2
@@ -116,37 +116,37 @@ RERANK_DEVICE=auto
 
 ### 1. Kiểm tra trạng thái hệ thống
 ```bash
-python rag_foundation/buoi_08/advanced_rag.py status --strategy hierarchical
+python rag_advance/buoi_08/advanced_rag.py status --strategy hierarchical
 ```
 
 ### 2. Chuẩn bị Index Semantic trong ChromaDB
 ```bash
-python rag_foundation/buoi_08/advanced_rag.py prepare-semantic --strategy hierarchical
+python rag_advance/buoi_08/advanced_rag.py prepare-semantic --strategy hierarchical
 ```
 
 ### 3. Chạy truy xuất Lexical BM25
 ```bash
-python rag_foundation/buoi_08/advanced_rag.py bm25 --strategy hierarchical --question "Điều 7 quy định gì?"
+python rag_advance/buoi_08/advanced_rag.py bm25 --strategy hierarchical --question "Điều 7 quy định gì?"
 ```
 
 ### 4. Chạy truy xuất Hybrid Search RRF (BM25 + Semantic)
 ```bash
-python rag_foundation/buoi_08/advanced_rag.py hybrid --strategy hierarchical --question "Điều 7 quy định gì?"
+python rag_advance/buoi_08/advanced_rag.py hybrid --strategy hierarchical --question "Điều 7 quy định gì?"
 ```
 
 ### 5. Chạy Cross-Encoder Reranker
 ```bash
-python rag_foundation/buoi_08/advanced_rag.py rerank --strategy hierarchical --question "Điều 7 quy định gì?"
+python rag_advance/buoi_08/advanced_rag.py rerank --strategy hierarchical --question "Điều 7 quy định gì?"
 ```
 
 ### 6. Hỏi đáp Pipeline hoàn chỉnh (Query)
 ```bash
-python rag_foundation/buoi_08/advanced_rag.py query --mode hybrid_rerank --strategy hierarchical --question "Điều 7 quy định như thế nào về cơ cấu lại thời hạn trả nợ?"
+python rag_advance/buoi_08/advanced_rag.py query --mode hybrid_rerank --strategy hierarchical --question "Điều 7 quy định như thế nào về cơ cấu lại thời hạn trả nợ?"
 ```
 
 ### 7. So sánh song song 4 chế độ Retrieval (Không gọi LLM)
 ```bash
-python rag_foundation/buoi_08/advanced_rag.py compare --strategy hierarchical --question "Điều 7 quy định gì?"
+python rag_advance/buoi_08/advanced_rag.py compare --strategy hierarchical --question "Điều 7 quy định gì?"
 ```
 
 ---
@@ -155,17 +155,17 @@ python rag_foundation/buoi_08/advanced_rag.py compare --strategy hierarchical --
 
 ### A. Thực thi Toàn Bộ 49 Offline Unittests (100% Pass)
 ```bash
-python -m unittest discover -s rag_foundation/buoi_08/tests
+python -m unittest discover -s rag_advance/buoi_08/tests
 ```
 
 ### B. Chạy Benchmark Đánh Giá Định Lượng
 ```bash
-python rag_foundation/buoi_08/evaluate.py --strategy hierarchical --k 5
+python rag_advance/buoi_08/evaluate.py --strategy hierarchical --k 5
 ```
 
 ### C. Khởi chạy Streamlit Dashboard
 ```bash
-python -m streamlit run rag_foundation/buoi_08/app.py
+python -m streamlit run rag_advance/buoi_08/app.py
 ```
 
 ---
@@ -219,7 +219,7 @@ Dưới đây là 4 mẫu câu hỏi kiểm thử đại diện cho các kịch 
 
 ## 🚨 12. Troubleshooting (Xử Lý Lỗi Thường Gặp)
 
-- **Lỗi tải Reranker Model (Network / Timeout)**: Kiểm tra kết nối mạng và đảm bảo thư mục `rag_foundation/buoi_08/storage/huggingface/` có quyền ghi.
+- **Lỗi tải Reranker Model (Network / Timeout)**: Kiểm tra kết nối mạng và đảm bảo thư mục `rag_advance/buoi_08/storage/huggingface/` có quyền ghi.
 - **CPU hoạt động chậm / Thiếu RAM**: Giảm `RERANK_BATCH_SIZE` xuống `2` hoặc `1` trong `.env`.
 - **Lỗi thiếu GEMINI_API_KEY**: Đảm bảo file `.env` đã được điền API key hợp lệ trước khi thực thi `prepare-semantic` hoặc `query`.
 
