@@ -1,0 +1,4 @@
+# Local gitignore for secrets and outputs
+.env
+output/
+__pycache__/
