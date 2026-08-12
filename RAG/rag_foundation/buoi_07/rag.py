@@ -14,6 +14,7 @@ import math
 import os
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
 
@@ -28,7 +29,7 @@ FIXTURE_CHUNKS_PATH = (BASE_DIR / "tests" / "fixtures" / "chunks_sample.json").r
 STORAGE_DIR = (BASE_DIR / "storage" / "chroma").resolve()
 
 # Nạp file .env từ vị trí tuyệt đối dựa trên BASE_DIR
-load_dotenv(dotenv_path=ENV_PATH)
+load_dotenv(dotenv_path=ENV_PATH, override=True)
 
 ALLOWED_STRATEGIES = {"fixed-size", "fixed", "semantic", "hierarchical"}
 
@@ -50,6 +51,7 @@ def get_config(custom_config: Optional[Dict[str, Any]] = None) -> Dict[str, Any]
         cfg["has_api_key"] = bool(cfg.get("api_key"))
         return cfg
 
+    load_dotenv(dotenv_path=ENV_PATH, override=True)
     api_key = os.getenv("GEMINI_API_KEY", "").strip()
     embedding_model = os.getenv("GEMINI_EMBEDDING_MODEL", "gemini-embedding-2").strip()
     embedding_dim_raw = os.getenv("GEMINI_EMBEDDING_DIM", "768").strip()
@@ -188,10 +190,16 @@ def validate_chunk(
     cid_str = chunk_id.strip()
     if cid_str in seen_ids:
         prev_file, prev_idx = seen_ids[cid_str]
-        raise ValueError(
-            f"Trùng chunk_id '{cid_str}': file 1 '{prev_file}' (record #{prev_idx}), "
-            f"file 2 '{file_name}' (record #{record_index})."
-        )
+        if prev_file == file_name:
+            raise ValueError(
+                f"Trùng chunk_id '{cid_str}': file 1 '{prev_file}' (record #{prev_idx}), "
+                f"file 2 '{file_name}' (record #{record_index})."
+            )
+        else:
+            stem = Path(file_name).stem
+            cid_str = f"{stem}_{cid_str}"
+            if cid_str in seen_ids:
+                cid_str = f"{cid_str}_{record_index}"
     seen_ids[cid_str] = (file_name, record_index)
 
     validated_chunk = dict(record)
@@ -364,18 +372,36 @@ def generate_embeddings(
             text = chunk.get("text", "")
             prompt = f"title: {source} | text: {text}"
 
-        try:
-            res = client.models.embed_content(
-                model=model_name,
-                contents=prompt,
-                config=types.EmbedContentConfig(output_dimensionality=dim)
-            )
-            if not res or not res.embedding or not res.embedding.values:
-                raise ValueError(f"API Gemini trả về kết quả rỗng cho chunk #{idx} (ID: {chunk.get('chunk_id')}).")
-            vec = [float(v) for v in res.embedding.values]
-            embeddings.append(vec)
-        except Exception as e:
-            raise RuntimeError(f"Lỗi khi gọi Gemini Embedding API tại chunk #{idx} (ID: {chunk.get('chunk_id')}): {e}")
+        max_retries = 8
+        res = None
+        for attempt in range(max_retries):
+            try:
+                res = client.models.embed_content(
+                    model=model_name,
+                    contents=prompt,
+                    config=types.EmbedContentConfig(output_dimensionality=dim)
+                )
+                break
+            except Exception as err:
+                err_str = str(err)
+                if ("429" in err_str or "RESOURCE_EXHAUSTED" in err_str or "quota" in err_str.lower()) and attempt < max_retries - 1:
+                    sleep_sec = 65 if attempt > 0 else 15
+                    time.sleep(sleep_sec)
+                    continue
+                raise RuntimeError(f"Lỗi khi gọi Gemini Embedding API tại chunk #{idx} (ID: {chunk.get('chunk_id')}): {err}")
+
+        raw_vec = None
+        if hasattr(res, "embeddings") and res.embeddings:
+            raw_vec = res.embeddings[0].values
+        elif hasattr(res, "embedding") and res.embedding:
+            raw_vec = res.embedding.values
+
+        if not raw_vec:
+            raise ValueError(f"API Gemini trả về kết quả rỗng cho chunk #{idx} (ID: {chunk.get('chunk_id')}).")
+        vec = [float(v) for v in raw_vec]
+        embeddings.append(vec)
+        if embedder_fn is None:
+            time.sleep(1.0)
 
     return embeddings
 
@@ -400,12 +426,14 @@ def verify_collection_metadata(collection, target_strategy: str, config: Dict[st
             f"Kỳ vọng '{expected_strat}', nhưng collection có '{actual_strat}'. "
             f"Vui lòng chạy với tham số --reset để tạo lại."
         )
+
     if actual_model and actual_model != config["embedding_model"]:
         raise ValueError(
             f"Mismatch Embedding Model trong collection '{collection.name}': "
             f"Kỳ vọng '{config['embedding_model']}', nhưng collection có '{actual_model}'. "
             f"Vui lòng chạy với tham số --reset."
         )
+
     if actual_dim and actual_dim != config["embedding_dim"]:
         raise ValueError(
             f"Mismatch Embedding Dimension trong collection '{collection.name}': "
@@ -455,7 +483,7 @@ def index_chunks(
     custom_config: Optional[Dict[str, Any]] = None
 ) -> Dict[str, Any]:
     """
-    Thực hiện index: Load & Validate Chunks -> Generate Embeddings -> Validate Vectors -> (Reset nếu có) -> Upsert batch.
+    Thực hiện index: Load & Validate Chunks -> Check existing IDs -> Generate Embeddings -> Atomic Reset -> Upsert batch.
     """
     config = get_config(custom_config)
 
@@ -468,12 +496,32 @@ def index_chunks(
     if not chunks:
         raise ValueError(f"Không có chunk hợp lệ nào để index cho strategy '{strategy}'.")
 
-    embeddings = generate_embeddings(chunks, config, embedder_fn=embedder_fn)
-    validate_embeddings(embeddings, config["embedding_dim"], len(chunks))
-
     client = get_chroma_client(storage_dir)
     coll_name = get_collection_name(strategy, config["embedding_model"], config["embedding_dim"])
     existing_colls = [c.name for c in client.list_collections()]
+
+    # Kiểm tra các chunk đã có sẵn để không cần gọi Gemini API trùng lặp khi reset=False
+    existing_ids = set()
+    if not reset and coll_name in existing_colls:
+        coll_existing = client.get_collection(name=coll_name, embedding_function=None)
+        verify_collection_metadata(coll_existing, strategy, config)
+        existing_data = coll_existing.get()
+        existing_ids = set(existing_data.get("ids", [])) if existing_data else set()
+
+    chunks_to_embed = [c for c in chunks if c["chunk_id"] not in existing_ids]
+
+    if not chunks_to_embed:
+        coll_existing = client.get_collection(name=coll_name, embedding_function=None)
+        return {
+            "collection_name": coll_name,
+            "indexed_chunks": 0,
+            "total_collection_records": coll_existing.count(),
+            "reset_performed": reset
+        }
+
+    # Generate & Validate Embeddings trước khi thay đổi DB để đảm bảo nguyên tố (Atomic)
+    embeddings = generate_embeddings(chunks_to_embed, config, embedder_fn=embedder_fn)
+    validate_embeddings(embeddings, config["embedding_dim"], len(chunks_to_embed))
 
     if reset and coll_name in existing_colls:
         client.delete_collection(name=coll_name)
@@ -498,8 +546,8 @@ def index_chunks(
         collection = client.get_collection(name=coll_name, embedding_function=None)
         verify_collection_metadata(collection, strategy, config)
 
-    ids = [c["chunk_id"] for c in chunks]
-    documents = [c["text"] for c in chunks]
+    ids = [c["chunk_id"] for c in chunks_to_embed]
+    documents = [c["text"] for c in chunks_to_embed]
     metadatas = [
         {
             "source": str(c.get("source", "")),
@@ -510,7 +558,7 @@ def index_chunks(
             "embedding_model": str(config["embedding_model"]),
             "embedding_dim": int(config["embedding_dim"])
         }
-        for c in chunks
+        for c in chunks_to_embed
     ]
 
     collection.upsert(
@@ -522,7 +570,7 @@ def index_chunks(
 
     return {
         "collection_name": coll_name,
-        "indexed_chunks": len(chunks),
+        "indexed_chunks": len(chunks_to_embed),
         "total_collection_records": collection.count(),
         "reset_performed": reset
     }
