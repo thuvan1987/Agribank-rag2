@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables & Secret keys
+.env
+*.env
+!.env.example
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# System / OS files
+.DS_Store
+Thumbs.db
+
+# Storage / DB cache
+storage/chroma/
+storage/huggingface/
+reports/*.json
+!reports/.gitkeep
+datademo/
+RAG/graph_rag_labs/ner_kb/output/
