@@ -185,7 +185,13 @@ def validate_chunk(
             f"page_start ({p_start}) lớn hơn page_end ({p_end})."
         )
 
-    cid_str = chunk_id.strip()
+    raw_cid = chunk_id.strip()
+    file_stem = Path(file_name).stem.replace(" ", "_")
+    if not raw_cid.startswith(file_stem):
+        cid_str = f"{file_stem}_{raw_cid}"
+    else:
+        cid_str = raw_cid
+
     if cid_str in seen_ids:
         prev_file, prev_idx = seen_ids[cid_str]
         raise ValueError(

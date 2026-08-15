@@ -1,0 +1,210 @@
+{
+  "total_documents": 15,
+  "total_chunks": 6465,
+  "level_breakdown": {
+    "Content": 31,
+    "Chapter": 146,
+    "Article": 772,
+    "Clause": 2787,
+    "Section": 115,
+    "Item": 2610,
+    "SubSection": 4
+  },
+  "relationship_breakdown": {
+    "PART_OF": 6465,
+    "PARENT_OF": 6465,
+    "NEXT": 6450
+  },
+  "documents": [
+    {
+      "doc_id": "44209",
+      "title": "Thông tư số 01/2014/TT-NHNN Quy định về giao nhận, bảo quản, vận chuyển tiền mặt, tài sản quý, giấy tờ có giá",
+      "total_chunks": 334,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 9,
+        "Article": 73,
+        "Clause": 173,
+        "Section": 12,
+        "Item": 66
+      }
+    },
+    {
+      "doc_id": "177271",
+      "title": "Thông tư số 01/2025/TT-NHNN Quy định về cấp Giấy phép lần đầu, cấp đổi Giấy phép của quỹ tín dụng nhân dân",
+      "total_chunks": 163,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 8,
+        "Article": 21,
+        "Clause": 72,
+        "Item": 54,
+        "Section": 7
+      }
+    },
+    {
+      "doc_id": "112025",
+      "title": "Nghị định số 73/2016/NĐ-CP Quy định chi tiết thi hành Luật kinh doanh bảo hiểm và Luật sửa đổi, bổ sung một số điều của Luật kinh doanh bảo hiểm",
+      "total_chunks": 976,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 22,
+        "Article": 116,
+        "Clause": 366,
+        "Item": 439,
+        "Section": 32
+      }
+    },
+    {
+      "doc_id": "169221",
+      "title": "Thông tư số 43/2024/TT-NHNN sửa đổi, bổ sung một số điều của Thông tư số 01/2014/TT-NHNN ngày 10 tháng 12 năm 2014 của Thống đốc Ngân hàng Nhà nước Việt Nam hướng dẫn việc tổ chức thực hiện hoạt đọng quản lý dự trữ ngoại hối nhà nước.",
+      "total_chunks": 116,
+      "level_breakdown": {
+        "Content": 1,
+        "Article": 4,
+        "Clause": 45,
+        "Item": 66
+      }
+    },
+    {
+      "doc_id": "163441",
+      "title": "Nghị định số 46/2023/NĐ-CP Quy định chi tiết thi hành một số điều của Luật Kinh doanh bảo hiểm",
+      "total_chunks": 1442,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 10,
+        "Article": 142,
+        "Clause": 611,
+        "Item": 660,
+        "Section": 14,
+        "SubSection": 4
+      }
+    },
+    {
+      "doc_id": "168220",
+      "title": "Thông tư số 27/2024/TT-NHNN Quy định về việc ngân hàng hợp tác xã, việc trích nộp, quản lý và sử dụng Quỹ bảo đảm an toàn hệ thống quỹ tín dụng nhân dân",
+      "total_chunks": 263,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 8,
+        "Article": 34,
+        "Clause": 111,
+        "Section": 15,
+        "Item": 94
+      }
+    },
+    {
+      "doc_id": "174218",
+      "title": "Thông tư số 62/2024/TT-NHNN Quy định điều kiện, hồ sơ, thủ tục chấp thuận việc tổ chức lại ngân hàng thương mại, tổ chức tín dụng phi ngân hàng",
+      "total_chunks": 316,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 14,
+        "Article": 30,
+        "Clause": 108,
+        "Item": 163
+      }
+    },
+    {
+      "doc_id": "117310",
+      "title": "Thông tư số 41/2016/TT-NHNN Quy định tỷ lệ an toàn vốn đối với ngân hàng, chi nhánh ngân hàng nước ngoài",
+      "total_chunks": 344,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 8,
+        "Article": 24,
+        "Clause": 129,
+        "Item": 172,
+        "Section": 10
+      }
+    },
+    {
+      "doc_id": "112924",
+      "title": "Thông tư số 105/2016/TT-BTC Hướng dẫn hoạt động đầu tư gián tiếp ra nước ngoài của tổ chức kinh doanh chứng khoán, quỹ đầu tư chứng khoán, công ty đầu tư chứng khoán và doanh nghỉệp kinh doanh bảo hỉểm",
+      "total_chunks": 208,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 6,
+        "Article": 21,
+        "Clause": 81,
+        "Section": 5,
+        "Item": 94
+      }
+    },
+    {
+      "doc_id": "166269",
+      "title": "Luật Hợp tác xã số 17/2023/QH15",
+      "total_chunks": 1101,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 24,
+        "Article": 115,
+        "Clause": 525,
+        "Item": 426,
+        "Section": 10
+      }
+    },
+    {
+      "doc_id": "6e689cd0-6f81-11f1-94d6-fd5d6d5ff793",
+      "title": "Quy định hồ sơ, thủ tục cấp Giấy phép lần đầu của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài, văn phòng đại diện nước ngoài",
+      "total_chunks": 387,
+      "level_breakdown": {
+        "Content": 5,
+        "Chapter": 4,
+        "Article": 45,
+        "Clause": 187,
+        "Item": 146
+      }
+    },
+    {
+      "doc_id": "185630",
+      "title": "Thông tư số 63/2025/TT-NHNN Sửa đổi, bổ sung một số điều của một số Thông tư về quỹ tín dụng nhân dân",
+      "total_chunks": 64,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 4,
+        "Article": 16,
+        "Clause": 23,
+        "Item": 20
+      }
+    },
+    {
+      "doc_id": "173695",
+      "title": "Thông tư số 56/2024/TT-NHNN Quy định hồ sơ, thủ tục cấp Giấy phép lần đầu của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài, văn phòng đại diện nước ngoài",
+      "total_chunks": 214,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 8,
+        "Article": 25,
+        "Clause": 85,
+        "Item": 95
+      }
+    },
+    {
+      "doc_id": "95652",
+      "title": "Nghị định số 135/2015/NĐ-CP Quy định về đầu tư gián tiếp ra nước ngoài",
+      "total_chunks": 254,
+      "level_breakdown": {
+        "Content": 1,
+        "Chapter": 14,
+        "Article": 39,
+        "Clause": 123,
+        "Item": 73,
+        "Section": 4
+      }
+    },
+    {
+      "doc_id": "25692",
+      "title": "Ngân hàng Nhà nước Việt Nam",
+      "total_chunks": 283,
+      "level_breakdown": {
+        "Content": 13,
+        "Chapter": 7,
+        "Article": 67,
+        "Clause": 148,
+        "Item": 42,
+        "Section": 6
+      }
+    }
+  ]
+}

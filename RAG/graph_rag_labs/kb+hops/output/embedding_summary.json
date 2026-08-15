@@ -1,0 +1,10 @@
+{
+  "total_documents": 15,
+  "total_chunks": 6465,
+  "successfully_embedded": 6465,
+  "error_chunks": 0,
+  "embedding_dimension": 384,
+  "device": "cpu",
+  "model_name": "thuannc/vi-distilled-msmarco-MiniLM-L12-cos-v5",
+  "embedding_duration_seconds": 58.48
+}
